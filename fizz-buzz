@@ -1,0 +1,30 @@
+class Solution {
+public:
+ 
+    
+    vector<string> fizzBuzz(int n) {
+        
+        // divisible by 3 and 5 means it is a factor of 15 
+        
+        vector<string>answers;
+        
+        
+        for(int start = 1; start <= n; start++){
+            
+               if(start%15==0){
+                    answers.push_back("FizzBuzz");
+               }
+               else if(start%3==0){
+                    answers.push_back("Fizz");
+               }
+               else if(start%5 ==0){
+                    answers.push_back("Buzz");
+               }
+               else {
+                    answers.push_back( to_string(start) );
+               }
+        }
+        
+        return answers;
+    }
+};
