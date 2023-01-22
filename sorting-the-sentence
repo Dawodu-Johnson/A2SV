@@ -1,0 +1,43 @@
+class Solution {
+public:
+    string sortSentence(string s) {
+        vector<string>words;
+        
+        string temp;
+        
+        for(const char& ch : s){
+              
+             if(ch ==' '){
+                   words.push_back(temp);
+                   temp = "";
+             }
+            
+             else{
+                  temp+=ch;
+             }
+        }
+        
+        if(!temp.empty()){   // last loop 
+             words.push_back(temp);
+        }
+        
+        sort(words.begin(), words.end(), [](const string& value1, const string&value2){
+            
+                 return value1[value1.size()-1] < value2[value2.size()-1];
+        });
+        
+        
+       
+        string answer;
+        
+        
+        for(const string& val: words){
+              answer+= val.substr(0, val.size()-1);
+              answer+=" ";
+        }
+        
+        answer.pop_back(); // remove the last space ;
+        
+        return answer;
+    }
+};
