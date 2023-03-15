@@ -12,7 +12,7 @@ public:
         }
         
         deque<int>store;
-        
+        // use a queue to store all possible starting points
         for(int i = 0; i <=size; i++){
             
             //increasing, for the monotonicity
